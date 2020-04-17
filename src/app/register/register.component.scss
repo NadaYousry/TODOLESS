@@ -1,0 +1,139 @@
+@import '../ourVariables.scss';
+.register{
+  background-image: url('https://i.postimg.cc/vZpKmTY9/signinBg.jpg');
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 0% 5rem;
+}
+.form {
+  &-container {
+    padding-top:15rem ;
+    &__btns{
+      &-btn{
+      padding: 10px 30px;
+      font-size: 17px;
+      background-color: $lightBlue;
+      // border-radius: $btnBorderRadius;     
+      border-radius: 20px; 
+      box-shadow: $boxShadow;
+      margin-top: 25px;
+      border:none;
+      }
+    }
+    &__wrapper {
+      flex: 0 1 100%;
+      position: relative;
+      display: flex;
+      margin-bottom: 2.5rem;
+      
+      &-input__field{
+        width: 100%;
+        position: relative;
+      }
+      &-input {
+        width: 100%;
+        padding: 0.5rem 0.5rem;
+        border: none;
+        border-bottom: 1px solid $gray;
+        transition: all 0.2s ease-in-out;
+        background-color: transparent;
+        z-index: 2;
+        position: relative;
+
+        &:focus {
+          outline: none;
+          border-bottom: 2px solid $lightBlue;
+        }
+      }
+    }
+
+    &__btns {
+      flex: 0 1 40%;
+      &-btn{
+        border: none;
+        border-radius: 30px;
+        padding: 1rem 2rem;
+        outline: none;
+        cursor: pointer;
+        &:hover{
+          color: $lightBlue;
+          background-color: $white;
+          border: 1px solid $lightBlue;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+
+label{
+  position: absolute;
+  bottom: 2%;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+
+}
+.labelFocus{
+  bottom: 70%;
+  font-size: 12px;
+  color: $lightBlue;
+}
+.form-container__wrapper-input-msg {
+  border: none;
+  background: none;
+  position: absolute;
+  right: 0;
+  color: red;
+  outline: none;
+  cursor: pointer;
+
+}
+
+.support {
+  font-size: 20px;
+  line-height: 2rem;
+}
+
+app-reg-animation {
+  flex: 0 1 50%
+}
+
+.not-valid-name {
+  position: absolute;
+  bottom: 0;
+  padding: 10px 0px 10px 20px;
+  z-index: 1;
+  color: red;
+  right: 0;
+  font-size: 10px;
+  bottom: -30px;
+  border: none;
+  text-align: end;
+}
+
+
+//****  responsive  ******//
+
+
+@media only screen and (max-width: 770px) {
+  .form-container{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+  .register{
+    // background-position: 30% 5rem;
+    height: unset;
+    min-height: 100vh;
+    background-position: right;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .register{
+    background-image: url('https://i.postimg.cc/xdzWGHxt/signin-Bg-Small-Screen.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    height: unset;
+    background-position: right;
+  }
+}

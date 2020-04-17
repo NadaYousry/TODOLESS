@@ -1,0 +1,15 @@
+<section class="container">
+    <section class="projects-nav row d-flex justify-content-between">
+        <div class="btn-group  p-0" role="group" aria-label="Basic example">
+          <button type="button" routerLinkActive="project-active" class="btn project-details-btn"
+          [routerLink]="['/account',currentUser.id,'projects',currentproject.name,'Details']" 
+          >Project Details</button>
+          <button type="button" routerLinkActive="project-active" class="btn project-flow-btn"
+          [routerLink]="['/account',currentUser.id,'projects',currentproject.name,'Flow']" 
+          >Project Flow</button>
+        </div>
+      </section>
+      <section class="container">
+        <router-outlet></router-outlet>
+      </section>
+</section>

@@ -1,0 +1,59 @@
+<header class="header">
+  <h2>total time: {{totalProjectTime}}</h2>
+  <h2 class="bonus">Bonus : </h2>
+  <h2 class="delay">Delay : </h2>
+</header>
+
+<!-- form -->
+
+<form [formGroup]='taskForm' (ngSubmit)='onSubmit(taskForm)'>
+  <input formControlName="name"[(ngModel)]="item.name" placeholder="task name">
+  <input formControlName="description"[(ngModel)]="item.description" placeholder="task description">
+  <input formControlName="totalTime" [(ngModel)]="item.totalTime" placeholder="task time">
+  <input formControlName="endDate" [(ngModel)]="item.endDate" placeholder="task deadLine" type="date">
+  <input formControlName="startDate"  [(ngModel)]="item.startDate" placeholder="task startDate" type="date">
+  <input formControlName="personId" [(ngModel)]="item.personId" placeholder="employee name">
+  <input formControlName="status" [(ngModel)]="item.status" placeholder="status">
+  <input type="file" [(ngModel)]="item.attachment" formControlName='attachment' (change)="readURL($event)" />
+  <div class="form-container__wrapper">
+    <div class="profiles-container__search-form">
+        <label>Assign to:</label>
+        <label>users::{{usersLength}}</label>
+        <input name="filterValue" placeholder="Search">
+    </div>
+    <div *ngIf="users?.length > 0 ; else nousers">
+        <ul>
+            <li *ngFor="let item of users " style="cursor: pointer;" (click)="selectUser($event,item)">
+                {{item.name}} , {{item.email}}
+            </li>
+        </ul>
+    </div>
+    <ng-template #nousers>
+        <h5>There are no items to lists</h5>
+    </ng-template>
+</div>
+  <button type="submit" name="submit" >send</button>
+</form>
+
+<div cdkDropListGroup>
+  <div class="example-container">
+    <h2>To do</h2>
+    <div
+      cdkDropList
+      [cdkDropListData]="todo"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)" cdkDropList= "disable">
+      <div class="example-box" 
+      *ngFor="let item of todo" cdkDrag cdkDragDisabled="{{disabledDrag}}"><br>
+        <p>task name :{{item.name}}</p><br>
+        <p>task descrption :{{item.descrption}}</p><br>
+        <p>task time :{{item.totalTime}}</p><br>
+        <p>task start date :{{item.startDate}}</p><br>
+        <p>task end date :{{item.endDate}}</p><br>
+        <p>PersonId id :{{item.personId}}</p>
+        <button type="button" (click)="deleteTask($event,item)">Delete</button>
+        <button (click)="editTask($event,item)">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>

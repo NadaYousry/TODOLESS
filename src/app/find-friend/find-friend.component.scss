@@ -1,0 +1,73 @@
+@import './../ourVariables.scss';
+
+.request {
+  font-family: $mainFont;
+  background-color: $white;
+  min-height: 100vh;
+
+  & p {
+    margin: unset;
+    text-transform: capitalize;
+  }
+
+  a {
+    text-decoration: unset;
+    color: $blue;
+    font-size: 13px;
+  }
+
+  &__content {
+    border-bottom: 1px solid #80808036;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    &-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex:0 1 20%;
+      &-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+        & img {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          object-fit: contain;
+        }
+      }
+
+      &-name {
+        & p {
+          color: $blue;
+          padding-left: 10px;
+          font-weight: $bold;
+        }
+      }
+    }
+
+    &-position {
+      flex:0 1 20%;
+      text-align: center;
+
+      p {
+        color: $lightBlue;
+      }
+    }
+    &-state{
+      flex: 0 1 20%;
+      text-align: right;
+    }
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 767px)  {
+  .request__content{
+    font-size: 10px;
+  }
+}

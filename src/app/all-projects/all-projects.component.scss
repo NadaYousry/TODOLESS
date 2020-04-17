@@ -1,0 +1,129 @@
+@import './../ourVariables.scss';
+
+main {
+  font-family: $mainFont;
+  background-color: $white;
+}
+
+/*===============
+search-add project
+================*/
+.add-project {
+  &__wrapper {
+    &-search {
+      & input {
+        border: unset;
+        border-bottom: 3px solid #f0f2f8;
+        font-size: 20px;
+        color: $blue;
+      }
+
+      & input::placeholder {
+        font-size: 18px;
+        color: $blue;
+      }
+    }
+
+  }
+
+}
+
+/*===============
+all projects
+===============*/
+.all-projects {
+  & a {
+    text-decoration: none;
+    color: unset
+  }
+
+  &__card {
+    width: 220px;
+    height: 160px;
+    margin: 0 auto;
+    margin-top: 50px;
+    position: relative;
+    background-color: $pureLight;
+    border-radius: 0 6px 6px 6px;
+    -webkit-box-shadow: $boxShadow;
+    -moz-box-shadow: $boxShadow;
+    box-shadow: $boxShadow;
+
+    &-add {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background-color: $lightBlue;
+      cursor: pointer;
+      & mat-icon,
+      & p {
+        color: $pureLight;
+      }
+
+      &:after {
+        background-color: $lightBlue;
+      }
+    }
+
+    &-head {
+      color: $blue;
+      border-bottom: 1px solid #fd611c;
+      width: 50%;
+    }
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 12px;
+      border-radius: 0 20px 0 0;
+    }
+
+    &:after {
+      border-top-left-radius: 20px;
+      background-color: $pureLight;
+      top: -12px;
+      left: 0px;
+    }
+
+    &:before {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      background-color: $white;
+      top: -5px;
+      right: 0px;
+    }
+
+    //hovering
+    &:hover {
+      background-color: $lightBlue;
+    }
+
+    &:hover {
+
+      &:after {
+        background-color: $lightBlue;
+      }
+
+    }
+
+    &:hover & {
+      &-head {
+        color: #fff
+      }
+    }
+
+    &:hover & {
+      &-date {
+        color: #fff
+      }
+    }
+  }
+
+}
+.createNow:first-of-type::after{
+  background-color: $lightBlue;
+
+}

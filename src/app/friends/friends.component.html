@@ -1,0 +1,35 @@
+<Section class="friends py-3">
+  <div class="container">
+  <div *ngIf="friends">
+    <div class="friends__content" *ngFor="let friend of friends" >
+      <div class="friends__content-info" (click)="strangProfile($event, friend)" [routerLink]="['/account',currentUser.id,'user',friend.name]" >
+        <div class="friends__content-info-img">
+          <img class="img-fluid"  *ngIf="friend.image" [src]='friend.image' alt="" />
+          <img class="img-fluid" *ngIf="!friend.image" src='../../assets/imgs/friends/friend.png'>
+        </div>
+        <div class="friends__content-info-name">
+          <p>{{friend.name}}</p>
+        </div>
+      </div>
+      <div class="friends__content-position">
+        <p>{{friend.title}}</p>
+      </div>
+      <div class="friends__content-status">
+        <p>offline</p>
+      </div>
+      <div class="friends__content-menu">
+
+        <div class="btn-group dropleft">
+          <mat-icon class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more_horiz
+          </mat-icon>
+          <div class="dropdown-menu">
+            <p><button class="dropdown-item" (click)="deleteFriend($event,friend)">remove</button></p>
+            <p><button class="dropdown-item" (click)="blockFriend($event,friend)">block</button></p>
+            <p><button class="dropdown-item" >Profile</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</Section>

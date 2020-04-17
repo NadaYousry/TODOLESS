@@ -1,0 +1,42 @@
+<button [matDialogClose] class="close_modal btn"><mat-icon>clear</mat-icon></button>
+<h3 class="text-center h2">Edit Project</h3>
+<form  class="example-form" [formGroup]="editform" (ngSubmit)="editProject(editform)">
+  <!-- ----------------------------- Name Input -------------------------------->
+  <mat-form-field  class="example-full-width">
+    <mat-label>Project Name</mat-label>
+    <input  matInput [value]='project.name' formControlName="name" />
+  </mat-form-field>
+
+  <!------------------------ project privacy  ------------------------>
+  <mat-form-field class="example-full-width">
+    <mat-label>Project Privacy</mat-label>
+    <input  matInput [value]='project.privacy'/>
+  </mat-form-field>
+  <div class="example-full-width d-flex justify-content-between">
+    <mat-form-field>
+      <mat-label>Start Date : {{project.startDate.seconds *1000 | date:'longDate'}}</mat-label>
+      <input placeholder="" matInput [matDatepicker]="picker" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field> 
+      <mat-label>End Date : {{project.endDate.seconds *1000 | date:'longDate'}}</mat-label>
+      <input placeholder="" matInput [matDatepicker]="picker1" />
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <mat-form-field class="example-full-width">
+    <mat-label>Project Description</mat-label>
+    <textarea [value]='project.description' matInput placeholder=""></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Invitors</mat-label>
+    <input 
+      type="text"
+      matInput
+      />
+  </mat-form-field>
+  <button mat-button class="save-edit btn-info">Save</button>
+</form >

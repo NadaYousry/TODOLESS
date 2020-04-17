@@ -1,0 +1,57 @@
+@import '../ourVariables.scss';
+.example-form {
+    /* min-width: 150px;
+    max-width: 500px; */
+    // width: 60rem;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .example-half-width{
+      width: 45%;
+  }
+
+  .save-edit{
+    position: relative;
+    left: 90%;
+  }
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+  .choose-file{
+    // background-color: $white;
+    padding: 1rem;
+    margin-left: 2rem;
+    border-radius: .4rem;
+    color: #ff4081;
+    font-size: 2rem;
+  }
+  .close_modal{
+    border: 0;
+    color: gray;
+    float: right;
+  }
+
+
+
+  @media only screen and (max-width:550px){
+    .example-half-width{
+      width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .save-edit{
+    float: left;
+    left: 55%;
+  }
+  .choose-file{
+    margin-left: 0;
+  }
+
+  }

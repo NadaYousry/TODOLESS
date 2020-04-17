@@ -1,0 +1,25 @@
+
+  <section class="aside">
+    <aside class="aside-container">
+      <div class="aside-container__logo">
+        <h2 class="logo"><a class="logo-link" href="#"><img src="https://i.imgur.com/ZWP4nIw.png">  Todo<span>less</span></a></h2>
+      </div>
+      <div routerLinkActive="active" [routerLink]="['/account',id,'profile']" class="aside-container__btn">
+        <mat-icon class="aside-container__btn-icon">person_outline</mat-icon>
+        <a class="aside-container__btn-link">
+          Profile</a>
+      </div>
+      <div routerLinkActive="active"[routerLink]="['/account',id,'projects']" class="aside-container__btn">
+        <mat-icon class="aside-container__btn-icon">dashboard</mat-icon>
+        <a class="aside-container__btn-link" >Project</a>
+      </div>
+      <div routerLinkActive="active" [routerLink]="['/account',id,'friends']" class="aside-container__btn">
+        <mat-icon class="aside-container__btn-icon">supervisor_account</mat-icon>
+        <a class="aside-container__btn-link" >Friends</a>
+      </div>
+      <div [routerLink]="['/account',id,'support']" routerLinkActive="active" class="aside-container__btn">
+        <mat-icon class="aside-container__btn-icon">headset_mic</mat-icon>
+        <a class="aside-container__btn-link" >Support</a>
+      </div>
+    </aside>
+  </section>

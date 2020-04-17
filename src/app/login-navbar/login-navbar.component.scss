@@ -1,0 +1,81 @@
+@import '../ourVariables.scss';
+
+.navbar{
+    position: relative;
+    padding-top: 2rem;
+    overflow: hidden;
+    background-color:#ffffff;
+    &-container{
+        &__brand{
+            color:$lightBlue;
+            font-weight: $bold;
+            font-size: 35px;
+            margin-right: 5rem;
+            span{
+                font-weight: $regular;
+                color: $green;
+            }
+        }
+        &__collapse-links{
+            margin-right: 15rem;
+        }
+        a.nav-link{
+            color: $blue;
+            font-size:18px;
+            font-weight: $regular;
+            text-transform: capitalize;
+            transition: all 0.2s ease-in-out;
+            padding: 15px;
+            &:hover{
+                color:$green;
+            }
+        }
+        a.nav-link.register{
+            color:$white;
+            background-color: $green;
+            border-radius: 15px 0px 0px 15px;
+            padding: 1.5rem 2rem 1.5rem 2rem;
+            position: absolute;
+            right: -10px;
+            margin: 0;
+            &:hover{
+                color:$green;
+                border: 2px solid $green;
+                background-color: $white;
+                padding: 1.5rem 7rem 1.5rem 2rem;
+
+            }
+        }
+
+    }
+}
+@media only screen and (max-width: 768px) {
+    .navbar{
+        padding-top: 2rem;
+        &-container__collapse-links{
+            background-color:#ffffff;
+            margin: 0 ;
+            text-align: center;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .nav-link{
+            border-bottom: 1px solid #f3f3f3;
+            font-size: 13px !important;
+        }
+        a.nav-link.register{
+            color:$white;
+            display: block;
+            background-color: $green;
+            border-radius:0;
+            padding: 0;
+            position: relative;
+            right: 0;
+            font-size: 13px;
+            padding: 15px;
+            &:hover{
+                padding: 0;
+            }
+        }
+    }
+}

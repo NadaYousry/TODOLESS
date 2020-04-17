@@ -1,0 +1,63 @@
+<main>
+  <!-----------------search-add-------------------->
+<section class="add-project mt-5">
+  <div class="container add-project__wrapper p-5">
+    <div class="row">
+      <div class="col-12 m-auto">
+        <div class="add-project__wrapper-search">
+          <form>
+            <div class="form-group">
+              <input type="search" class="form-control py-5" placeholder="Search Project" />
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--------------------------------------------->
+  <!-----------------create project popup-------->
+
+  <!-----------------/create project popup------->
+  <!--------------------------------------------->
+</section>
+<!-----------------/search-add------------------->
+<!----------------------------------------------->
+<!-----------------all projects------------------>
+<section class="all-projects mb-5">
+  <div class="all-projects__wrapper container p-5 ">
+    <div class="row">
+      <div class="col-lg-3 col-md-6" (click)="openDialog()">
+          <div class="all-projects__card createNow">
+           <div class="all-projects__card-add ">
+            <mat-icon aria-hidden="false" aria-label="Example add icon">add</mat-icon>
+            <p>Create Project</p>
+           </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6" *ngFor="let project of userProject ; let i = index">
+        <a (click)="selectProject($event ,project)" [routerLink]="[project.name,'Details']">
+          <div class="all-projects__card">
+            <h2 class="all-projects__card-head pt-5 ml-4">{{project.name}}</h2>
+            <p class="all-projects__card-date ml-4 pt-4"><i class="mr-2" >Start Date:</i>
+              {{project.startDate.seconds *1000 | date:'longDate'}}
+            </p>
+            <p class="all-projects__card-date ml-4"><i class="mr-2">End Date:</i>
+              {{project.endDate.seconds *1000 | date:'longDate'}} 
+            </p>
+          </div>
+        </a>
+        <!-- <button (click)="delete($event,project)">del</button> -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-----------------/all projects----------------->
+<!----------------------------------------------->
+</main>
+
+<!-- <div class="chart">
+  <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+    [options]="pieChartOptions" [colors]="pieChartColors" [legend]="pieChartLegend">
+  </canvas>
+</div> -->

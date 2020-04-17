@@ -1,0 +1,31 @@
+<section class="navbar" #navbar>
+    <nav class="navbar-container">
+        <div class="navbar-container__menu" (click)='menuOpen($event,navbar)'><mat-icon>apps</mat-icon></div>
+        <div class="navbar-container__content">
+            <ul class="navbar-container__content-list">
+                <li class="navbar-container__content-list--item">
+                    <mat-icon matBadgePosition="above" matBadgeSize="small" matBadge="3" matBadgeColor="warn"class="notification">notifications_none</mat-icon>
+                </li>
+                <li class="navbar-container__content-list--item">
+                    <mat-icon class="connections">forum</mat-icon>
+                </li>
+                <li class="navbar-container__content-list--item">
+
+                    <div class="dropdown">
+                        <button id="my-dropdown" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                        <figure *ngIf="currentUser.image" class="navbar-container__content-list--item-img"><img class="img-full"  [src]="currentUser.image"></figure>
+                        <figure *ngIf="!currentUser.image" class="navbar-container__content-list--item-img"><img class="img-full"  src='https://i.postimg.cc/sx7wGfx0/friend.png'></figure>
+
+                        <div class="user-name">{{currentUser.name}}</div>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="my-dropdown">
+                            <a class="dropdown-item active" href="#" (click)="logout()">Logout</a>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>        
+        </div>
+    </nav>
+
+</section>

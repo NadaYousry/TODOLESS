@@ -1,0 +1,23 @@
+<section class="request py-3">
+  <div class="container">
+    <div class="request__content" *ngFor="let friend of friendrequests">
+      <div class="request__content-info">
+        <div class="request__content-info-img">
+          <img class="img-fluid"  *ngIf="friend.image" [src]='friend.image' alt="" />
+          <img class="img-fluid" *ngIf="!friend.image" src='../../assets/imgs/friends/friend.png'>
+        </div>
+        <div class="request__content-info-name">
+          <p>{{friend.name}}</p>
+        </div>
+      </div>
+      <div class="request__content-position">
+        <p>{{friend.title}}</p>
+      </div>
+      <div class="request__content-state">
+        <button class="btn btn-info mx-2" (click)="addFriend($event,friend)">Accept</button>
+        <button class="btn btn-danger" (click)="rejectFriend($event,friend)">Reject</button>
+      </div>
+
+    </div>
+  </div>
+</section>

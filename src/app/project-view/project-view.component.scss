@@ -1,0 +1,69 @@
+@import '../ourVariables.scss';
+.container{
+    margin-top: 40px;
+    .projects-nav{
+        padding-left: 3.4rem;
+        padding-right: 3.4rem;
+        .btn-group{
+            .btn{
+                font-size: 1.5rem;
+                color: #7f8386;
+                font-weight: $medium;
+                border-radius: 0;
+                border: 0 !important;
+            }
+            .btn:active , .btn:focus , .btn:hover{
+                border: 0 !important;
+            }
+            .project-active{
+                color: #32a1f2;
+            }
+            .project-active::after{
+                content:'';
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                height: .2rem;
+                background-color: #32a1f2;
+                position: relative;
+                top: .7rem;
+            }
+        }
+        
+    }
+}
+.btn-group:active,.btn-group:focus{
+    outline: none;
+    box-shadow: none
+
+}
+
+.project-details-btn:active,.project-details-btn:focus
+{
+    outline: none !important;
+    box-shadow: none
+
+}
+.project-flow-btn:active,.project-flow-btn:focus
+{
+    outline: none !important;
+    box-shadow: none
+
+}
+.project-active:focus{
+    outline: none !important;
+    box-shadow: none
+}
+@media only screen and (min-width: 320px) and (max-width: 767px)  {
+    .container{
+        .projects-nav{
+            .btn-group{
+                .btn{
+                    font-size: 12px;
+                  
+                }
+            }
+            
+        }
+    }
+  }

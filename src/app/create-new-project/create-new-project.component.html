@@ -1,0 +1,85 @@
+<button [matDialogClose] class="close_modal btn"><mat-icon>clear</mat-icon></button>
+<h3 class="text-center h2">Create Project</h3>
+
+<form
+  class="example-form"
+  [formGroup]="projectForm"
+  (ngSubmit)="createProject(projectForm)"
+> 
+<!-- ----------------------------- Name Input -------------------------------->
+  <mat-form-field class="example-full-width">
+    <mat-label>Project Name</mat-label>
+    <input matInput placeholder="" value="" formControlName="name" />
+  </mat-form-field>
+
+  <!------------------------ project privacy  ------------------------>
+    <mat-radio-group aria-label="Select project privacy" formControlName="privacy">
+      <mat-radio-button value="public">public</mat-radio-button>
+      <mat-radio-button value="private">private</mat-radio-button>
+    </mat-radio-group>
+  <!------------------------  date  ------------------------>
+  <div class="example-full-width d-flex justify-content-between">
+    <!------------------------ start date  ------------------------>
+    <mat-form-field class="example-half-width">
+      <mat-label>Start Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="startDate"/>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker ></mat-datepicker>
+    </mat-form-field>
+    <!------------------------ end date  ------------------------>
+    <mat-form-field class="example-half-width">
+      <mat-label>End Date</mat-label>
+      <input matInput [matDatepicker]="picker1" formControlName="endDate"/>
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <!-- ---------------------------- Descripition ----------------------------- -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Project Description</mat-label>
+    <textarea matInput placeholder="" formControlName="description"></textarea>
+  </mat-form-field>
+<!------------------------ Assign  ------------------------>
+<mat-form-field class="example-full-width" *ngIf="assign?.length > 0">
+  <mat-label>Assignee</mat-label>
+  <!-- <div > -->
+    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete  #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)='selectUser($event,option)'>
+        {{option.email}}
+      </mat-option>
+    </mat-autocomplete>
+  <!-- </div> -->
+</mat-form-field>
+
+
+
+  
+  <!-- <mat-form-field>
+    <mat-label>Favorite food</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let item of assign" [value]="item.name">
+        {{item.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> -->
+  
+  
+  <!-- ----------------------------- Invite to -------------------------------->
+  <mat-form-field class="example-full-width">
+    <mat-label>Invite by Email</mat-label>
+    <input matInput type="email" placeholder="" value="" formControlName="invitors" />
+  </mat-form-field>
+<!-- ----------------------------- Attachment -------------------------------->
+<div class="row">
+  <div class="col-5">
+    <input class="ng-hide"  formControlName="attachment" hidden id="input-file-id" multiple type="file" (change)="readURL($event)" />
+<label for="input-file-id" class="choose-file" ><mat-icon>attachment</mat-icon></label>
+</div>
+  <div class="col-5">
+    <button mat-button [matDialogClose] type="submit" class="save-edit btn-info">Create</button>
+  </div>
+  
+</div>
+  
+</form>

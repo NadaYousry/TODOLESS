@@ -1,0 +1,62 @@
+<section class="container pt-4">
+  <!-- <section class="projects-nav row d-flex justify-content-between">
+    <div class="btn-group  p-0" role="group" aria-label="Basic example">
+      <button type="button" routerLinkActive="project-active" class="btn project-details-btn project-active">Project Details</button>
+      <button type="button" routerLinkActive="project-active" class="btn project-flow-btn">Project Flow</button>
+    </div>
+  </section> -->
+  <div class="row d-flex justify-content-end pr-4">
+    <button mat-button (click)="openDialog()" class="edit-project"><mat-icon>create</mat-icon> Edit Project</button>
+  </div>
+
+  <section class="row project-details justify-content-between mb-5">
+    <div class="col-md-6">
+      <div class="container">
+        <ul class="list-unstyled">
+          <li>
+            <span class="title h3">Project Name : </span>
+            <span class="data">{{ project.name }}</span>
+          </li>
+          <li>
+            <span class="title h3">Project Privacy : </span>
+            <span class="data">{{ project.privacy }}</span>
+          </li>
+          <li class="d-flex date-details row">
+            <div class="col-6">
+              <span class="title h3" >Start Date : </span>
+              <span class="data">{{ project.startDate.seconds *1000 | date:'longDate' }}</span>
+            </div>
+            <div class="col-6">
+              <span class="title h3">End Date : </span>
+              <span class="data">{{ project.endDate.seconds *1000 | date:'longDate' }}</span>
+            </div>
+          </li>
+          <li>
+            <span class="title h3 project-descrip-title">Project Description :</span>
+            <blockquote>{{ project.description }}</blockquote>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container">
+          <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [colors]="pieChartColors" [legend]="pieChartLegend">
+          </canvas>
+      </div>
+    </div>
+  </section>
+  <section class="row attachments">
+    <p class="h3 pl-4">Attachments</p>
+    <div class="container attachments-wrapper d-flex align-items-center">
+      <div class="attachmentItem">
+        <a href="{{project.attachment}}" download> 
+          <i class="material-icons">
+            cloud_download
+            </i>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>

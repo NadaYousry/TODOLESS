@@ -1,0 +1,13 @@
+<section class="support">
+    <ul class="support-list">
+        <li (click)="activeProblem($event)" class="support-list__item">Problem In Profile</li>
+        <li (click)="activeProblem($event)" class="support-list__item">Problem In Project </li>
+        <li (click)="activeProblem($event)" class="support-list__item">Problem In Tasks </li>
+        <li (click)="activeProblem($event)" class="support-list__item">Other</li>
+    </ul>
+    <form class="form-group support-problem" [formGroup]="support" (ngSubmit)="onSubmit(support)">
+        <input type="text" class="form-control support-problem__name" formControlName="problemName" [value]="problemName" disabled/>
+        <textarea  class="form-control support-problem__coverLetter" formControlName="problemLetter"></textarea>
+        <button class="support-problem__sumbit btn-primary" type="submit">Send</button>
+    </form>
+</section>

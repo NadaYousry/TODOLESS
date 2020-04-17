@@ -1,0 +1,29 @@
+@keyframes yourAnimation{
+    0%{
+        opacity: 0;
+        }
+    100%{
+        opacity: 1;
+        }
+}
+svg{
+    width: 100%;
+    height: auto;
+}
+#bigBlue{
+    animation: yourAnimation 1s  linear;
+}
+#blue{
+    animation: yourAnimation 5s  linear;
+}
+
+#orange{
+    animation: yourAnimation 10s  linear;
+}
+
+#red{
+    animation: yourAnimation 15s  linear;
+}
+#yellow{
+    animation: yourAnimation 20s  linear;
+}

@@ -1,0 +1,78 @@
+@import './../ourVariables.scss';
+.logo-link{
+  text-decoration: none;
+}
+.aside{
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+  position: fixed;
+  left: -220px;
+  transition: all 0.5s ease-in-out;
+
+
+  &-container{
+    background-color:$blue;
+    flex-direction: column;
+    display:flex;
+    justify-content: flex-start;
+    height: 100%;
+    &__logo{
+      padding: 30px;
+    }
+    &__btn{
+      margin: 6px;
+      text-align: center;
+      padding: 4px 30px;
+      margin-bottom: 15px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+      cursor: pointer;
+      font-weight: $medium;
+      &:hover{
+        background-color: $lightBlue;
+      }
+     
+      &-icon{
+        color: #f7f7f7;;
+        margin-right: 10px;
+        font-size: 22px;
+        cursor: pointer;
+      }
+      &:hover &-icon{
+        color: white;
+      }
+      &-link{
+        font-family: $mainFont;
+        color:#f7f7f7;;
+        text-decoration: none;   
+        font-size: 13px;
+      }
+      &:hover &-link{
+        color: white;
+      }
+    }
+  }
+}
+.logo{
+  font-family: $mainFont;
+  color:$white;
+  text-transform: uppercase;
+  text-align: center;
+}
+.logo span{
+  color: $lightBlue;
+}
+.logo img {
+  height: 65px;
+}
+
+.return{
+  left:0;
+}
+.active{
+  background-color: $lightBlue;
+
+}

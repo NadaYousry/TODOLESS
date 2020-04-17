@@ -1,0 +1,100 @@
+@import '../ourVariables.scss';
+.navbar{
+    &-container{
+        font-family: $mainFont;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        padding: 0px 20px;
+        box-shadow: -1px 2px 4px 0px #e4dfdf;
+        &__menu{
+            cursor: pointer;
+
+        }
+        &__content{
+            padding-top: 5px;
+            &-list{
+                display: flex;
+                list-style: none;
+                margin-left: 10px;
+                align-items: center;
+
+                &--item{
+                    margin-left: 15px;
+                    font-size: 30px;
+                    &-img{
+                        height:30px;
+                        width:30px;
+                        margin-bottom: 0;
+                        display:inline-block;
+                        margin-right: 10px;
+                    }
+                   
+                }
+            }
+        }
+    }
+}
+.img-full{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.dropdown-menu{
+    padding: 0;
+    right: 0;
+    left: auto;
+    background-color: white;
+
+}
+.dropdown-toggle{
+    font-size: 13px;
+    font-weight:$bold;
+}
+.user-name{
+    display: inline-block;
+}
+.dropdown-toggle::after{
+    vertical-align: 0;
+}
+.dropdown-item{
+    background-color: white;
+    color: black;
+}
+.dropdown-item:hover{
+    background-color: black;
+    color: white;
+}
+.btn:focus{
+    box-shadow: none;
+}
+.connections{
+    cursor: pointer;
+
+}
+.notification {
+    font-size: 22px;
+    cursor: pointer;
+}
+::ng-deep .mat-badge-small.mat-badge-overlap.mat-badge-after .mat-badge-content{
+    right:-4px
+}
+::ng-deep .mat-badge-small.mat-badge-above .mat-badge-content{
+    top:-4px
+}
+@media only screen and(max-width: 767px)  {
+
+    .user-name{
+        display: inline-block;
+        width: 100%;
+        font-size: 10px;
+    }
+    .navbar-container__content-list--item-img{
+        display: block;
+        margin: 0;
+        margin-left: 35%;
+        padding: 0;
+    }
+}

@@ -1,0 +1,28 @@
+@import './../ourVariables.scss';
+
+.nav{
+    background-color: $white; 
+    padding: 1rem;
+    &-container{
+        display: flex;
+        &__list{
+            list-style: none;
+            display: flex;
+            flex:0 1 60%;
+            justify-content: space-evenly;
+            &-item{
+                &--link{
+                    color:black;
+                }
+            }
+        }
+    }
+}
+// @media only screen and (min-width: 320px) and (max-width: 767px)  {
+//     .alllogin{
+//       margin: 0;
+//     }
+//     app-login-reg{
+//         display: none;
+//     }
+//   }

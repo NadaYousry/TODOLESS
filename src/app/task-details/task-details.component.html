@@ -1,0 +1,42 @@
+<h3 class="text-center">Task Details</h3>
+<div class="container">
+    <ul class="list-unstyled">
+      <li>
+        <span class="title h3">Task Name : </span>
+        <span class="data">{{ task.name }}</span>
+      </li>
+      <li>
+        <span class="title h3">Status : </span>
+        <span class="data">{{ task.status }}</span>
+      </li>
+      <li>
+          <span class="title h3" >Start Date : </span>
+          <span class="data">{{ task.startDate.seconds *1000 | date:'longDate' }}</span>
+      </li>
+      <li>
+        <span class="title h3">End Date : </span>
+        <span class="data">{{ task.endDate.seconds *1000 | date:'longDate' }}</span>
+      </li>
+      <li>
+        <span class="title h3">Time : </span>
+        <span class="data">{{ task.totalTime }}</span>
+      </li>
+      <li>
+        <span class="title h3">Assign To : </span>
+        <span class="data">{{ task.assignTo }}</span>
+      </li>
+      <li>
+        <span class="title h3 project-descrip-title">Description :</span>
+        <blockquote>{{ task.description }}</blockquote>
+      </li>
+      <li>
+        <span class="title h3 project-descrip-title">Attachment :</span>
+        <a href="{{task.attachment}}" download> 
+          <i class="material-icons">
+            cloud_download
+            </i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>

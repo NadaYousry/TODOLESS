@@ -1,0 +1,39 @@
+
+
+.example-form {
+    /* min-width: 150px;
+    max-width: 500px; */
+    width: 60rem;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .example-half-width{
+      width: 45%;
+  }
+
+  .save-edit{
+    position: relative;
+    left: 90%;
+  }
+  @media only screen and (max-width:800px){
+    .example-form {
+      width: 100%;
+  }
+  .mat-form-field {
+      width: 100%;
+  }
+  .example-full-width{
+     flex-wrap: wrap;
+    }
+    .save-edit{
+      left: 80%;
+  }
+}
+@media only screen and (max-width:425px){
+
+    .save-edit{
+      left: 55%;
+  }
+}

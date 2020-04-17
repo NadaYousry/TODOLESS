@@ -1,0 +1,82 @@
+<!-- ----------------------------------------------------------------------- -->
+<!--                           Drag & Drop Section                           -->
+<!-- ----------------------------------------------------------------------- -->
+<section class="developer-content ">
+  <div class="container-fluid pl-0">
+    <div class="row">
+      <div class="col-12 pt-4 pb-2">
+        <div class="container">
+          <div class="row" cdkDropListGroup>
+<!-- ---------------------------- Pending field ---------------------------- -->
+            <div class="col developer-content__status">
+              <h2 class="text-center developer-content__status-head">Pending</h2>
+              <div class="developer-content__status-list" cdkDropList [cdkDropListData]="todo"
+                (cdkDropListDropped)="drop($event)" cdkDropList="disable">
+                <div class=" developer-content__status-task" *ngFor="let item of todo" cdkDrag
+                  cdkDragDisabled="{{disabledDrag}}">
+                  <h2>{{item.name}}</h2>
+                  <p><i>Time: {{item.totalTime}} h</i></p>
+                  <div class="developer-content__status-task-icons">
+                    <mat-icon aria-hidden="false" aria-label="Example menu icon" (click)="openDialogview($event,item)">menu</mat-icon>
+                    <div class="task-owner">
+                      <span>m</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="developer-content__status-footer text-center" (click)="openDialog()">
+                <div class="developer-content__status-footer-add">
+                  <mat-icon aria-hidden="false" aria-label="Example add icon">add</mat-icon>
+                </div>
+              </div>
+            </div>
+<!-- -------------------------- Working On Field --------------------------- -->
+            <div class=" col developer-content__status">
+              <h2 class="text-center  developer-content__status-head">working On</h2>
+              <div class="parent-status" cdkDropList [cdkDropListData]="workingOn" class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class=" developer-content__status-task" *ngFor="let item of workingOn" cdkDrag>
+                  <div>
+                    <h2>{{item.name}}</h2>
+                    <div class="pause">
+                      <p>Time: {{result}} h</p>
+                      <button (click)="handlePause()" class="btn btn-danger">{{status}}</button>
+                    </div>
+                  </div>
+                  <div class="developer-content__status-task-icons">
+                    <mat-icon aria-hidden="false" aria-label="Example menu icon" (click)="openDialogview($event,item)">menu</mat-icon>
+                    <div class="task-owner">
+                      <span>m</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col developer-content__status">
+<!-- --------------------------- Finished Filed ---------------------------- -->
+              <h2 class="text-center  developer-content__status-head ">Finished</h2>
+              <div class="developer-content__status-list" cdkDropList [cdkDropListData]="finished" class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class=" developer-content__status-task " *ngFor="let item of finished" cdkDrag>
+                  <div>
+                    <h2>{{item.name}}</h2>
+                    <div class="pause">
+                      <p><i>Time: {{item.totalTime}} h</i></p>
+                      <p class="bonus"><i>bonus</i> {{finishedTaskTime}} </p>
+                    </div>
+                  </div>
+                  <div class="developer-content__status-task-icons">
+                    <mat-icon aria-hidden="false" aria-label="Example menu icon" (click)="openDialogview($event,item)">menu</mat-icon>
+                    <div class="task-owner">
+                      <span>m</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

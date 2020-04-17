@@ -1,0 +1,16 @@
+section{
+    transition: all 0.5s ease-in-out;
+}
+.move{
+    position: relative;
+    margin-left: 220px;
+}
+@media only screen and (min-width: 320px) and (max-width: 767px)  {
+    .move{
+        margin-right: -220px;
+        overflow-x: hidden;
+    }
+    #overflow{
+        overflow-x: hidden;
+    }
+}

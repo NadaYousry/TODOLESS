@@ -1,0 +1,130 @@
+@import '../ourVariables.scss';
+
+.container{
+    background-color: $white;
+    padding: 3rem;
+    .edit-project{
+        /* background-color: #32a1f2;
+        color: white;
+        border-radius: 0; */
+    }
+    .project-details{
+        background-color: $white;
+        border-top: 1px solid $white;
+        padding: 2rem;
+        .container{
+            background-color: #fff;
+            .list-unstyled{
+                font-size: 1.5rem;
+                li{
+                    margin-bottom: .5rem;
+                    border-radius: .5rem;   
+                    
+                    .title{
+                        color: #393e41;
+                        padding: .43rem;
+                        display: inline-block;
+                    }
+                    .data{
+                        padding: .5rem;
+                        padding-left: 2rem;
+                        display: inline-block;
+                        border-top-right-radius: .5rem;
+                        border-bottom-right-radius: .5rem;
+                    }
+                    .project-descrip-title{
+                        border-bottom-left-radius: 0;
+                        border-top-right-radius: .5rem;
+                    }
+                    blockquote{
+                        padding-left: .5rem;
+                        line-height: 2rem;
+                    }
+                }
+            
+            }
+        }
+    }
+    .attachments{
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+        .attachments-wrapper{
+            background-color: #fff;
+            padding: 2rem;
+            .attachmentItem{
+                width: 7rem;
+                margin-left: 3rem;
+            }
+            .attachmentItem:hover{
+                
+            }
+        }
+    }
+    
+}
+@media only screen and (min-width: 320px) and (max-width: 767px)  {
+    .container{
+        background-color: $white;
+        padding: 3rem 1rem;
+        margin-bottom: 30px;
+        // text-align: center;
+        .edit-project{
+          font-size: 12px;
+        }
+        .project-details{
+            background-color: $white;
+            border-top: 1px solid $white;
+            padding: 2rem 0;
+            .container{
+                background-color: #fff;
+                .list-unstyled{
+                    font-size: 1.5rem;
+                    li{
+                        margin-bottom: 2rem;
+                        border-radius: .5rem;   
+                        
+                        .title{
+                            color: #393e41;
+                            padding: .43rem;
+                            display: inline-block;
+                            font-size: 12px;
+                        }
+                        .data{
+                            padding: .5rem;
+                            display: inline-block;
+                            border-top-right-radius: .5rem;
+                            border-bottom-right-radius: .5rem;
+                            font-size: 12px;
+                        }
+                        .project-descrip-title{
+                            border-bottom-left-radius: 0;
+                            border-top-right-radius: .5rem;
+                        }
+                        blockquote{
+                            padding-left: .5rem;
+                            line-height: 2rem;
+                            font-size: 12px;
+                        }
+                    }
+                
+                }
+            }
+        }
+        .attachments{
+            padding: 2rem 1rem;
+
+            .attachments-wrapper{
+                background-color: #fff;
+                padding: 2rem;
+                .attachmentItem{
+                    width: 7rem;
+                    margin-left: 3rem;
+                }
+                .attachmentItem:hover{
+                    
+                }
+            }
+        }
+        
+    }
+  }

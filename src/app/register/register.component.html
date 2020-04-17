@@ -1,0 +1,61 @@
+
+<section class="register">
+    <app-reg-navbar></app-reg-navbar>
+    <section class="form container">
+        <div class="row">
+            <!-- <app-reg-animation></app-reg-animation> -->
+            <form class="form-container col-lg-6 col-md-6 col-12 ml-auto" [formGroup]="register" (ngSubmit)="createAccount(register)">
+        <!-- ----------------------------- Name Input ------------------------------ -->
+                <div class="form-container__wrapper">
+                    <div class="form-container__wrapper-input__field">
+                        <label for="" #labelKeyName>Name</label>
+                        <input class="form-container__wrapper-input" (change)="onChangeName()" formControlName="name"  (focus)="labelUp($event,labelKeyName)" (focusout)="labelDown($event,labelKeyName)" type="text" >
+                    </div>
+                        <button *ngIf="register.get('name').hasError('pattern') || nameIsExist" class="form-container__wrapper-input-msg"><mat-icon class="support">error</mat-icon>
+                        </button>
+                    <div *ngIf="register.get('name').hasError('pattern')" class="not-valid-name"> name Must be </div>
+                    <div *ngIf="nameIsExist" class="not-valid-name">vaild email</div>
+
+                </div>
+        <!-- ----------------------------- Email Input ----------------------------- -->
+                <div class="form-container__wrapper">
+                    <div class="form-container__wrapper-input__field">
+                        <label for="" #labelKeyEmail>Email</label>
+                        <input class="form-container__wrapper-input" (change)="onChangeEmail()" formControlName="email" (focus)="labelUp($event,labelKeyEmail)" (focusout)="labelDown($event,labelKeyEmail)" type="email">
+                    </div>
+                        <button *ngIf="register.get('email').hasError('pattern')" class="form-container__wrapper-input-msg"><mat-icon class="support">error</mat-icon>
+                        </button>
+                    <div *ngIf="emailIsExist" class="not-valid-name">vaild email</div>
+                    <div *ngIf="register.get('email').hasError('pattern')" class="not-valid-name"> Email Must be include @ and
+                        domin</div>
+                </div>
+        <!-- --------------------------- Password Input ---------------------------- -->
+                <div class="form-container__wrapper">
+                    <div class="form-container__wrapper-input__field">
+                        <label for="" #labelKeyPassword>Password</label>
+                        <input class="form-container__wrapper-input" formControlName="password" (focus)="labelUp($event,labelKeyPassword)" (focusout)="labelDown($event, labelKeyPassword)" type="password">
+                    </div>
+                    <div *ngIf="register.get('password').hasError('pattern')" class="not-valid-name"> password Must be include
+                        uppercase and lowercase</div>
+                </div>
+        <!-- ----------------------------- Phone Input ----------------------------- -->
+                <div class="form-container__wrapper">
+                    <div class="form-container__wrapper-input__field">
+                        <label for="" #labelKeyPhone>Phone</label>
+                        <input class="form-container__wrapper-input" formControlName="phone" (change)="onChangePhone()" (focus)="labelUp($event,labelKeyPhone)" (focusout)="labelDown($event, labelKeyPhone)"  type="text">
+                    </div>
+                    <button *ngIf="register.get('phone').hasError('pattern')" class="form-container__wrapper-input-msg"><mat-icon class="support">error</mat-icon>
+                    </button>
+                    <div *ngIf="register.get('phone').hasError('pattern')" class="not-valid-name"> phone must be 8+</div>
+                    <div *ngIf="phoneIsExist" class="not-valid-name">vaild phone</div>
+                </div>
+        <!-- ------------------------------- Sumbit -------------------------------- -->
+                <div class="form-container__btns">
+                    <button class="btn btn-primary form-container__btns-btn" type="submit"
+                        [disabled]="nameIsExist || phoneIsExist || register.invalid"
+                        >Register</button>
+                </div>
+            </form>
+        </div>
+    </section>   
+</section>

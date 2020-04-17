@@ -1,0 +1,55 @@
+                        <!-- ----------------------------------------------------------------------- -->
+                        <!--                             Login Component                             -->
+                        <!-- ----------------------------------------------------------------------- -->
+
+
+<section class="login-body">
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                         Navbar Component Start                          -->
+<!-- ----------------------------------------------------------------------- -->
+
+    <app-login-navbar></app-login-navbar>
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                          Navbar Component End                           -->
+<!-- ----------------------------------------------------------------------- -->
+ 
+    <section class="login container-fluid">
+        <div class="login-google">
+        </div> 
+        <div class="row alllogin">
+            <div class="form-container col-lg-6 col-md-6 col-12">
+<!-- ----------------------------- form Start ------------------------------ -->
+                <form class="login-container" [formGroup]="login" (ngSubmit)="onLogin(login)">
+<!-- ------------------------------ UserName ------------------------------- -->
+                    <mat-form-field class="login-container__wrapper">
+                        <mat-label>Username or Email</mat-label>
+                        <input matInput formControlName="emailOrUsername" type="text" class="login-container__wrapper-input">
+                        <mat-icon class="login-container__wrapper-icon person">person</mat-icon>
+                        <div class="wrongData" *ngIf="emailOrUsername">Invalid Email Or Username</div>
+
+                    </mat-form-field>
+<!-- ------------------------------ Password ------------------------------- -->
+
+                    <mat-form-field class="login-container__wrapper">
+                        <mat-label>Enter your password</mat-label>
+                        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" class="login-container__wrapper-input">
+                        <mat-icon class="button-hide" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon class="login-container__wrapper-icon hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </mat-icon>
+                        <div class="wrongPassword" *ngIf="password">Wrong Password</div>
+
+                    </mat-form-field>
+<!-- ------------------------------- Sumbit -------------------------------- -->
+                    <div class="login-container__wrapper">
+                        <button type="submit" class=" login-container__wrapper-btn btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="img-container col-lg-6 col-md-6 col-12">
+                <app-login-reg></app-login-reg>
+            </div>
+        </div>
+    </section>
+</section>

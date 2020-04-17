@@ -1,0 +1,102 @@
+@import '../ourVariables.scss';
+
+.support{
+    display:flex;
+    margin-top: 50px;
+    &-list{
+        list-style: none;
+        flex: 0 1 50%;
+       
+        &__item{
+            border-left: 2px solid #2ca6ef;
+            margin-bottom: 40px;
+            padding: 20px;
+            color: #969696;
+            width: 90%;
+            background-color:white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            &:hover{
+                transform: scale(1.1);
+                color: #ffffff;
+                border-left: none;
+                background-image: -webkit-gradient(linear, left top, right bottom, from(#ffffff), to(#ffffff));
+                background-image: linear-gradient(to right, #2ca6ef, #00000000);
+            }
+        }
+    }
+    &-problem{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 50px;
+        &__name{
+            height: 60px;
+            font-size: 15px;
+            font-weight: $bold;
+        }
+        &__coverLetter{
+            height: 200px;
+            font-size: 15px;
+            font-weight: $regular;
+            resize: none;
+
+        }
+        &__sumbit{
+            border: none;
+            width: 100%;
+            font-size: 15px;
+            height: 40px;
+
+            
+        }
+    }
+}
+// mat-icon{
+//     position: absolute;
+//     right: 0;
+//      color:#2ca6ef;
+// }
+.active{
+    transform: scale(1.1);
+    color: #ffffff;
+    border-left: none;
+    background-image: -webkit-gradient(linear, left top, right bottom, from(#ffffff), to(#ffffff));
+    background-image: linear-gradient(to right, #2ca6ef, #00000000);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+@media only screen and (max-width: 768px) {
+    .support{
+        flex-wrap: wrap;
+        &-list{
+            flex: 1 1 100%;
+            padding: 0;
+            &__item{
+                margin: 0 auto 40px;
+            }
+        }
+        &-problem{
+            margin: 0 auto;
+            &__name{
+                width: 90%;
+                margin: 0 auto;
+            }
+            &__coverLetter{
+                width: 90%;
+                margin: 20px auto;
+    
+            }
+            &__sumbit{
+                width: 90%;
+                border-radius: 0px;
+                margin: 0 auto 20px;
+            }
+        }
+    }
+    
+
+}

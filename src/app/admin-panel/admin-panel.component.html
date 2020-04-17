@@ -1,0 +1,58 @@
+<section class="adminprofile">
+    <div class="adminprofile-container">
+        <main class="adminprofile-container__body">
+            <form class="form" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+                <div class="adminprofile-container__body__form-content">
+                    <div class="form__content-name">
+                        <label>Name:</label>
+                        <input type="text" [value]='edituser.name' placeholder="Username"  formControlName="name">
+                    </div>
+                    <div class="form__content-title">
+                        <label>title:</label>
+                        <input type="text" placeholder="title" [value]="edituser.title" formControlName="title">
+                    </div>
+                    <div class="form__content-email">
+                        <label>Email:</label>
+                        <input type="email" placeholder="Email" [value]="edituser.email" formControlName="email">
+                    </div>
+                    <button type="button" (click)="editdata($event,item)" >edit</button>
+
+                    <button type="submit" >Save</button>
+                </div>
+            </form>
+            <aside class="adminprofile-container__side">
+                <div class="adminprofile-container__side-search">
+                    <ul class="adminprofile-container__side__search-list">
+                        <section class="profiles">
+
+                            <div class="profiles-container__search-form">
+                                <label>users::{{itemLength}}</label>
+                            </div>
+                            <div class="profiles-container__search-form">
+                                <label>Emplyees::{{itemLength}}</label>
+                            </div>
+
+                            <div class="profiles-container__search-form">
+                                <label>users::{{itemLength}}</label>
+                                <input [(ngModel)]="filterValue" placeholder="Search">
+                            </div>
+
+                            <div class="profiles-container__list" *ngIf="users?.length > 0 ; else noemployees">
+                                <ul>
+                                    <li *ngFor="let item of users | search:filterValue">
+                                        {{item.name}} :{{item.role}}: {{item.email}}
+                                        <button type="button" (click)="deleteUser($event,item)">X</button>
+                                        <button type="button" (click)="editUser($event,item)">E</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <ng-template #noemployees>
+                                <h5>There are no items to lists</h5>
+                            </ng-template>
+                        </section>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+</section>

@@ -1,0 +1,51 @@
+@import '../ourVariables.scss';
+
+.container{
+    padding: 3rem;
+    .list-unstyled{
+        font-size: 1.5rem;
+        li{
+            margin-bottom: .5rem;
+            border-radius: .5rem;   
+            
+            .title{
+                color: #393e41;
+                padding: .43rem;
+                display: inline-block;
+            }
+            .data{
+                padding: .5rem;
+                padding-left: 2rem;
+                display: inline-block;
+                border-top-right-radius: .5rem;
+                border-bottom-right-radius: .5rem;
+            }
+            .project-descrip-title{
+                border-bottom-left-radius: 0;
+                border-top-right-radius: .5rem;
+            }
+            blockquote{
+                padding-left: .5rem;
+                line-height: 2rem;
+            }
+        }
+    
+    }
+    
+    .attachments{
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+        .attachments-wrapper{
+            background-color: #fff;
+            padding: 2rem;
+            .attachmentItem{
+                width: 7rem;
+                margin-left: 3rem;
+            }
+            .attachmentItem:hover{
+                
+            }
+        }
+    }
+    
+}
